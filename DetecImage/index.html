@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Detector de Imágenes</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+<script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<input type="file" id="subir" accept="image/*">
+
+<div id="app">
+
+    <!-- CATÁLOGO -->
+    <div id="catalogo">
+        <img src="../img/arbol.jpg" onclick="seleccionar(this)">
+        <img src="../img/botella.jpg" onclick="seleccionar(this)">
+        <img src="../img/perro.jpg" onclick="seleccionar(this)">
+        <img src="../img/auto.jpg" onclick="seleccionar(this)">
+    </div>
+
+    <!-- CENTRO -->
+    <div id="centro">
+
+        <div id="previewBox">
+            <img id="preview">
+            <div id="question">?</div>
+        </div>
+
+        <div id="resultado">Selecciona una imagen</div>
+
+    </div>
+
+</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

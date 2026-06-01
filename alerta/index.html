@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>05 - Alerta Detección de Persona</title>
+  <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+ 
+</head>
+<body>
+  <h1>Alerta: Detección de Persona</h1>
+  <p>Si se detecta una persona por más de 5 segundos, se emite una alerta</p>
+
+  <div id="contenedor">
+    <video id="video" autoplay muted playsinline></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+
+  <div id="barra-zona">
+    <div id="barra-label">Tiempo con persona detectada: <span id="seg">0.0</span>s / 5s</div>
+    <div id="barra-cont"><div id="barra"></div></div>
+  </div>
+
+  <div id="estado">Iniciando detector...</div>
+  <div id="info"></div>
+
+  <div id="alerta-overlay"></div>
+  <div id="alerta-texto">¡ALERTA! PERSONA DETECTADA</div>
+
+ 
+</body>
+</html>
