@@ -45,7 +45,7 @@ async function clasificar(img){
     if(confianza >= 50){
 
         document.getElementById("resultado").innerHTML =
-        `📌 ${etiqueta}<br>🎯 ${confianza.toFixed(2)}%`;
+        ` ${etiqueta}<br ${confianza.toFixed(2)}%`;
 
     } else {
 

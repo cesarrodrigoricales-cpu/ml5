@@ -38,7 +38,6 @@ function draw(){
 
     let region = face[parte];
 
-    // Dibujar puntos de la parte seleccionada
     if(region && region.keypoints){
 
         beginShape();
