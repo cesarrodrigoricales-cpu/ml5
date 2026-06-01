@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>03 - Detección Partes del Rostro</title>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>Partes del rostro</title>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+<script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+/* UI */
+#panel{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:10;
+    background:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+select,input{
+    margin:5px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Detección de Partes del Rostro</h1>
-  <div class="controles">
-    <div>
-      <label>Parte del rostro: </label>
-      <select id="parte">
-        <option value="ojos">Ojos</option>
-        <option value="labios">Labios</option>
-        <option value="nariz">Nariz</option>
-        <option value="cejas">Cejas</option>
-        <option value="cara">Cara completa</option>
-      </select>
-    </div>
-    <div>
-      <label>Color: </label>
-      <input type="color" id="color" value="#ff00ff">
-    </div>
-  </div>
 
-  <div id="contenedor">
-    <video id="video" autoplay playsinline></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
-  </div>
-  <div id="info">Cargando...</div>
+<div id="panel">
+    <label>Parte:</label>
+    <select id="parte">
+        <option value="leftEye">Ojo Izquierdo</option>
+        <option value="rightEye">Ojo Derecho</option>
+        <option value="lips">Boca</option>
+        <option value="nose">Nariz</option>
+    </select>
 
- <script src=""></script>ip
+    <input type="color" id="color" value="#ff0000">
+</div>
+
+<script src="./script.js"></script>
+
 </body>
 </html>

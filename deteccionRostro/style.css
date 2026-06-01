@@ -1,9 +1,0 @@
-    body { margin: 0; background: #1a0a2e; color: white; font-family: Arial, sans-serif; text-align: center; }
-    h1 { color: #c77dff; margin: 15px 0 5px; }
-    .controles { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 10px; background: #12071f; }
-    .controles label { font-size: 14px; color: #ddd; }
-    select, input[type=color] { padding: 5px; border-radius: 6px; border: 1px solid #555; background: #222; color: white; cursor: pointer; }
-    #contenedor { position: relative; width: 640px; height: 480px; margin: 10px auto; }
-    #video { position: absolute; top:0; left:0; width:640px; height:480px; transform: scaleX(-1); }
-    #canvas { position: absolute; top:0; left:0; width:640px; height:480px; }
-    #info { color: #c77dff; margin: 8px; font-size: 14px; }

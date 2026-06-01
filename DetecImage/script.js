@@ -1,11 +1,15 @@
 let classifier;
+let modeloListo = false;
 
 // cargar modelo
 ml5.imageClassifier("MobileNet").then(model => {
     classifier = model;
+    modeloListo = true;
+    console.log("Modelo cargado");
 });
 
-// seleccionar imagen
+
+// seleccionar imagen del catálogo
 function seleccionar(img){
 
     document.getElementById("preview").src = img.src;
@@ -16,15 +20,21 @@ function seleccionar(img){
     clasificar(img);
 }
 
-// clasificar
+
+// clasificar imagen
 async function clasificar(img){
 
-    if(!classifier) return;
+    if(!modeloListo){
+        document.getElementById("resultado").innerHTML =
+        "Cargando modelo...";
+        return;
+    }
 
     const results = await classifier.classify(img);
 
     let etiqueta = results[0].label;
     let confianza = results[0].confidence * 100;
+
 
     if(confianza >= 50){
 
@@ -44,6 +54,7 @@ async function clasificar(img){
     }
 }
 
+
 // subir imagen
 document.getElementById("subir").addEventListener("change", function(e){
 
@@ -52,12 +63,13 @@ document.getElementById("subir").addEventListener("change", function(e){
 
     reader.onload = function(event){
 
-        document.getElementById("preview").src = event.target.result;
+        let img = document.getElementById("preview");
+        img.src = event.target.result;
 
-        document.getElementById("preview").style.display = "block";
+        img.style.display = "block";
         document.getElementById("question").style.display = "none";
 
-        clasificar(document.getElementById("preview"));
+        clasificar(img);
     }
 
     reader.readAsDataURL(file);
